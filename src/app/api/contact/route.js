@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 
 export async function POST(req) {
-  const { name, email, message } = await req.json();
+  const { name, email, subject, message } = await req.json();
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -14,8 +14,13 @@ export async function POST(req) {
   await transporter.sendMail({
     from: email,
     to: process.env.EMAIL_USER,
-    subject: "School Contact Form",
-    text: message,
+    subject: subject,
+    text: `
+Name: ${name}
+Email: ${email}
+
+${message}
+    `,
   });
 
   return Response.json({ success: true });
