@@ -8,12 +8,23 @@ export default function StudyMaterials() {
   const grades = Array.from({ length: 11 }, (_, i) => i + 1);
 
   return (
-    <main className="bg-gray-50 min-h-screen pb-20">
+    <main className="bg-gray-50  min-h-screen pb-20">
       {/* HEADER SECTION */}
-      <section className="bg-[#0f604d] pt-32 pb-20 px-6 text-center relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-          <div className="absolute top-10 left-10 w-64 h-64 border-4 border-white rounded-full" />
-        </div>
+     <section
+  className="
+    relative
+    bg-[#0f604d]
+    pt-32 pb-20 px-6
+    text-center
+    overflow-hidden
+    bg-[url('/images/study_material.png')]
+    bg-cover
+    bg-center
+    bg-no-repeat
+  "
+>
+    <div className="absolute inset-0 bg-[#0f604d]/65 " />
+
         
         <div className="relative z-10 max-w-4xl mx-auto">
           <span className="bg-emerald-400/20 text-emerald-300 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
