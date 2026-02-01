@@ -26,12 +26,12 @@ export default function HomePage() {
   return (
     <main className="bg-white text-gray-800">
       
-      {/* --- HERO SECTION: THE MAJESTIC ENTRANCE --- */}
+      {/* --- HERO SECTION:  --- */}
       <section className="relative h-[100vh] flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center scale-105 animate-slow-zoom"
-          style={{ backgroundImage: "url('/school-campus.jpg')" }} // Replace with actual school image
+          style={{ backgroundImage: "url('/images/school.png')" }} 
         >
           <div className="absolute inset-0 bg-gradient-to-b from-[#0f604d]/80 via-[#0f604d]/60 to-[#0f604d]/90" />
         </div>
@@ -138,11 +138,67 @@ export default function HomePage() {
 </div>
 
           </div>
-          
-          <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-4">
+
+  {/* LEFT COLUMN */}
+  <div className="space-y-4 pt-12">
+
+    {/* classroom */}
+    <div className="relative h-64 rounded-3xl overflow-hidden shadow-lg">
+      <Image
+        src="/images/classroom.png"
+        alt="Classroom"
+        fill
+        className="object-cover hover:scale-105 transition-transform duration-500"
+      />
+    </div>
+
+    {/* students group */}
+    <div className="relative h-80 rounded-3xl overflow-hidden shadow-lg">
+      <Image
+        src="/images/students_group.png"
+        alt="Students group"
+        fill
+        className="object-cover hover:scale-105 transition-transform duration-500"
+      />
+    </div>
+
+  </div>
+
+
+  {/* RIGHT COLUMN */}
+  <div className="space-y-4">
+
+    {/* teacher science */}
+    <div className="relative h-80 rounded-3xl overflow-hidden shadow-lg">
+      <Image
+        src="/images/teacher_science.png"
+        alt="Science teacher"
+        fill
+        className="object-cover hover:scale-105 transition-transform duration-500"
+      />
+    </div>
+
+    {/* playing */}
+    <div className="relative h-64 rounded-3xl overflow-hidden shadow-lg">
+      <Image
+        src="/images/playing.png"
+        alt="Students playing"
+        fill
+        className="object-cover hover:scale-105 transition-transform duration-500"
+      />
+    </div>
+
+  </div>
+
+</div>
+    
+          {/* <div className="grid grid-cols-2 gap-4">
             <div className="space-y-4 pt-12">
               <div className="h-64 bg-gray-200 rounded-3xl overflow-hidden shadow-lg">
-                <div className="w-full h-full bg-[#0f604d]/10 flex items-center justify-center"><FaChild size={40} className="text-[#0f604d]"/></div>
+                <div className="w-full h-full bg-[#0f604d]/10 flex items-center justify-center">
+                <Image src=""/>
+                </div>
               </div>
               <div className="h-80 bg-gray-200 rounded-3xl overflow-hidden shadow-lg">
                  <div className="w-full h-full bg-[#0f604d]/10 flex items-center justify-center"><FaBookReader size={40} className="text-[#0f604d]"/></div>
@@ -156,7 +212,7 @@ export default function HomePage() {
                 <div className="w-full h-full bg-[#0f604d]/10 flex items-center justify-center"><FaChalkboardTeacher size={40} className="text-[#0f604d]"/></div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 </motion.section>
@@ -190,9 +246,9 @@ export default function HomePage() {
   <div className="max-w-7xl mx-auto px-6 relative z-10">
 
     <div className="text-center mb-16">
-      <span className="text-emerald-400 font-bold tracking-[0.3em] uppercase text-sm">
+      {/* <span className="text-emerald-400 font-bold tracking-[0.3em] uppercase text-sm">
         Our Impact
-      </span>
+      </span> */}
       <h2 className="text-4xl md:text-5xl font-extrabold text-white mt-4">
         School at a Glance
       </h2>
