@@ -17,6 +17,9 @@ import {
 import { MdOutlineSportsSoccer, MdHistoryEdu } from 'react-icons/md';
 import { TypewriterText } from '@/components/TypeWritter';
 import { Counter } from '@/components/Counter';
+import FeatureSection from '@/components/Features';
+import { motion } from 'framer-motion';
+import Gallery from '@/components/Gallery';
 export default function AboutPage() {
   
   // const facilities = [
@@ -72,6 +75,27 @@ const facilities = [
     { title: "Cultural Performance Award", year: "2024", icon: <FaStar /> },
     { title: "Environmental Initiative", year: "2024", icon: <FaLeaf /> },
   ];
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 
   return (
     <main className="bg-white text-gray-800">
@@ -93,7 +117,7 @@ const facilities = [
       </section>
 
       {/* OUR RICH HERITAGE */}
-      <section className="max-w-6xl mx-auto px-6 py-20 md:py-28">
+      {/* <section className="max-w-6xl mx-auto px-6 py-20 md:py-28">
         <div className="flex flex-col items-center text-center">
           <div className="text-[#0f604d] mb-4 text-4xl">
             <MdHistoryEdu />
@@ -115,10 +139,94 @@ const facilities = [
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
+<section className="max-w-6xl mx-auto px-6 py-20 md:py-28">
+  <motion.div
+    className="grid md:grid-cols-2 gap-14 items-center"
+    variants={containerVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, margin: "-100px" }}
+  >
+
+    {/* ================= LEFT CONTENT ================= */}
+    <motion.div variants={itemVariants}>
+      <motion.div
+        className="text-[#0f604d] mb-4 text-4xl"
+        variants={itemVariants}
+      >
+        <MdHistoryEdu />
+      </motion.div>
+
+      <motion.p
+        className="text-[#0f604d] font-bold text-sm tracking-[0.2em] uppercase mb-3"
+        variants={itemVariants}
+      >
+        Our Story
+      </motion.p>
+
+      <motion.h2
+        className="text-3xl md:text-4xl font-bold mb-6 text-gray-900"
+        variants={itemVariants}
+      >
+        Our Heritage
+      </motion.h2>
+
+      <motion.div className="space-y-5" variants={containerVariants}>
+        <motion.p
+          className="text-gray-600 leading-relaxed text-lg"
+          variants={itemVariants}
+        >
+          Mu/Thenniyankulam Government Tamil Mixed School has been a cornerstone
+          of education in the Thunukkai Division for many decades. Established
+          to serve the educational needs of the local Tamil-speaking community,
+          our school has nurtured generations to become responsible individuals.
+        </motion.p>
+
+        <motion.p
+          className="text-gray-600 leading-relaxed text-lg"
+          variants={itemVariants}
+        >
+          Today, we continue to build on this legacy, embracing modern teaching
+          methods while preserving traditional values that make us a trusted
+          institution for generations of families.
+        </motion.p>
+      </motion.div>
+    </motion.div>
+
+    {/* ================= RIGHT IMAGES ================= */}
+    <motion.div
+      className="relative h-[380px] md:h-[450px]"
+      variants={itemVariants}
+    >
+      <motion.img
+        src="/images/school.png"
+        alt="School heritage"
+        className="absolute top-0 right-0 w-[80%] h-[70%] object-cover rounded-3xl shadow-xl"
+        variants={itemVariants}
+      />
+
+      <motion.img
+        src="/images/teacher.png"
+        alt="Students learning"
+        className="absolute bottom-0 left-0 w-[85%] h-[70%] object-cover rounded-3xl shadow-2xl border-8 border-white"
+        variants={itemVariants}
+      />
+    </motion.div>
+
+  </motion.div>
+</section>
+
 
       {/* VISION & MISSION */}
-      <section className="bg-gray-50 py-20 md:py-28">
+      <motion.section
+  className="max-w-6xl mx-auto px-6 py-20 md:py-28"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+  viewport={{ once: true }}
+>
+   
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <p className="text-[#0f604d] font-bold text-sm tracking-widest uppercase mb-3">Our Purpose</p>
@@ -157,75 +265,12 @@ const facilities = [
             </div>
           </div>
         </div>
-      </section>
+  
+</motion.section>
 
       {/* FACILITIES GRID */}
-      <section className="max-w-6xl mx-auto px-6 py-20 md:py-28">
-        <div className="text-center mb-16">
-          {/* <p className="text-[#0f604d] font-bold text-sm tracking-widest uppercase mb-3">What We Offer</p> */}
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Facilities</h2>
-          <p className="text-gray-500 text-lg">Modern infrastructure designed to support comprehensive learning</p>
-        </div>
+      <FeatureSection/>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {facilities.map((item, i) => (
-            <div key={i} className="group p-8 rounded-2xl bg-white border border-gray-100 hover:border-[#0f604d]/20 hover:bg-emerald-50/20 transition-all">
-              <div className="text-[#0f604d] mb-5 group-hover:scale-110 transition-transform">
-                {item.icon}
-              </div>
-              <h4 className="font-bold text-xl text-gray-900 mb-2">{item.title}</h4>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {item.facility}
-                {/* High quality environment to support student growth and learning through state-of-the-art resources. */}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* DEDICATED EDUCATORS - STATS */}
-      {/* <section className="bg-[#0f604d] py-16 md:py-24">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { val: "45+", label: "Dedicated Faculty" },
-              { val: "15+", label: "Subject Specialists" },
-              { val: "20+", label: "Support Staff" }
-            ].map((stat, i) => (
-              <div key={i} className="bg-white/10 backdrop-blur-md rounded-2xl p-10 text-center border border-white/20">
-                <h3 className="text-5xl font-extrabold text-white mb-2">{stat.val}</h3>
-                <p className="text-emerald-100 font-medium uppercase tracking-widest text-xs">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-{/* 
-<section className="bg-[#0f604d] py-16 md:py-24">
-  <div className="max-w-6xl mx-auto px-6">
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-      {[
-        { value: 35, suffix: "+", label: "Teachers" },
-        { value: 850, suffix: "+", label: "Students" },
-        { value: 25, suffix: "+", label: "Years of Service" }
-      ].map((stat, i) => (
-        <div
-          key={i}
-          className="bg-white/10 backdrop-blur-md rounded-2xl p-10 text-center border border-white/20"
-        >
-          <h3 className="text-5xl font-extrabold text-white mb-2">
-            <Counter value={stat.value} suffix={stat.suffix} />
-          </h3>
-
-          <p className="text-emerald-100 font-medium uppercase tracking-widest text-xs">
-            {stat.label}
-          </p>
-        </div>
-      ))}
-    </div>
-  </div>
-</section> */}
 
       {/* ACHIEVEMENTS */}
       <section className="max-w-4xl mx-auto px-6 py-20 md:py-28">
@@ -252,7 +297,8 @@ const facilities = [
       </section>
 
       {/* PHOTO GALLERY */}
-      <section className="bg-gray-50 py-20 md:py-28">
+     <Gallery/>
+      {/* <section className="bg-gray-50 py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <p className="text-[#0f604d] font-bold text-sm tracking-widest uppercase mb-3">School Life</p>
@@ -269,7 +315,7 @@ const facilities = [
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
     </main>
   );

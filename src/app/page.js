@@ -10,7 +10,7 @@ import {
   FaQuoteLeft, 
   FaBookReader, 
   FaChalkboardTeacher, 
-  FaChild,
+  FaChild,FaTag,
   FaRegCalendarAlt
 } from 'react-icons/fa';
 import { MdOutlineExplore, MdAssignment } from 'react-icons/md';
@@ -19,12 +19,15 @@ import { TypewriterText } from '@/components/TypeWritter';
 import Image from 'next/image';
 import { Counter } from '@/components/Counter';
 import PrincipalMessage from '@/components/PrincipalMessage';
+import { announcements } from "@/data/announcements";
+import { motion } from 'framer-motion';
 export default function HomePage() {
+
   return (
     <main className="bg-white text-gray-800">
       
       {/* --- HERO SECTION: THE MAJESTIC ENTRANCE --- */}
-      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[100vh] flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center scale-105 animate-slow-zoom"
@@ -34,17 +37,17 @@ export default function HomePage() {
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 mb-8 animate-fade-in-down">
+          <div className="mt-7 inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 mb-8 animate-fade-in-down">
             <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
             <span className="text-xs font-bold tracking-[0.2em] uppercase">Established Excellence</span>
           </div>
           
-          <h1 className="text-5xl md:text-8xl font-black tracking-tight mb-8 leading-[1.1]">
+          <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-6 leading-[1.1]">
             Mu/Thenniyankulam <br />
             <span className="text-emerald-400">Govt Tamil Mixed School</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-emerald-50/90 max-w-3xl mx-auto font-light leading-relaxed mb-12">
+          <p className="text-xl md:text-2xl text-emerald-50/90 max-w-3xl mx-auto font-light leading-relaxed mb-8">
             Nurturing young minds, shaping every character, and empowering 
             future leaders in the heart of Thunukkai, Northern Province.
           </p>
@@ -62,6 +65,13 @@ export default function HomePage() {
       </section>
 
       {/* --- WELCOME SECTION: THE QUOTE --- */}
+      <motion.section
+  className="max-w-7xl mx-auto px-6 py-20 md:py-28"
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+  viewport={{ once: true }}
+>
       <section className="py-24 max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
@@ -149,7 +159,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
+</motion.section>
       {/* --- STATS SECTION: AT A GLANCE --- */}
       {/* <section className="bg-[#0f604d] py-24 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -243,18 +253,39 @@ export default function HomePage() {
 
       {/* --- ANNOUNCEMENTS: LATEST NEWS --- */}
       <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
               <span className="text-[#0f604d] font-bold tracking-widest uppercase text-sm">Stay Updated</span>
               <h2 className="text-4xl font-extrabold text-gray-900 mt-4">Latest Announcements</h2>
             </div>
-            <button className="flex items-center gap-2 text-[#0f604d] font-bold hover:underline">
+            {/* <button className="flex items-center gap-2 text-[#0f604d] font-bold hover:underline">
               View All Updates <FaArrowRight size={14} />
-            </button>
+            </button> */}
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+  {announcements.slice(0, 4).map((item) => (
+    <Link 
+      key={item.id} 
+      href={`/announcements/${item.id}`}
+      className="group bg-white p-6 rounded-[2rem] border border-gray-100 hover:border-[#0f604d] hover:shadow-xl transition-all"
+    >
+      <div className="text-[#0f604d] bg-emerald-50 w-10 h-10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#0f604d] group-hover:text-white transition-colors">
+        <FaTag size={16} />
+      </div>
+      <p className="text-gray-400 text-xs font-bold uppercase mb-2">{item.date}</p>
+      <h3 className="text-lg font-black text-gray-900 group-hover:text-[#0f604d] transition-colors leading-tight">
+        {item.title}
+      </h3>
+      <p className="text-gray-500 text-sm mt-3 line-clamp-2">
+        {item.excerpt}
+      </p>
+    </Link>
+  ))}
+</div>
+          {/* <div className="grid md:grid-cols-3 gap-8">
             {[
               { title: "Tamil New Year Celebrations", date: "April 14, 2026", type: "Cultural" },
               { title: "Annual Sports Meet Registration", date: "March 20, 2026", type: "Sports" },
@@ -271,7 +302,7 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -289,12 +320,12 @@ export default function HomePage() {
               and educational guides to support your learning journey.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-emerald-400 text-[#0f604d] px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-white transition-all shadow-lg">
-                <MdAssignment size={20} /> Access Library
-              </button>
-              <button className="bg-white/10 text-white border border-white/20 backdrop-blur-md px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-white/20 transition-all">
-                View Past Papers
-              </button>
+             <Link
+  href="/study-materials"
+  className="bg-emerald-400 text-[#0f604d] px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-white transition-all shadow-lg"
+>
+  <MdAssignment size={20} /> Access Library
+</Link>
             </div>
           </div>
         </div>

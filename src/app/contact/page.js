@@ -74,7 +74,7 @@ export default function ContactPage() {
               <FaPhoneAlt size={22} />
             </div>
             <h4 className="font-bold text-gray-900 mb-2">Phone Number</h4>
-            <p className="text-[#0f604d] font-bold">+94 24 XXX XXXX</p>
+            <p className="text-[#0f604d] font-bold">+94 774445338</p>
             <p className="text-gray-400 text-xs mt-1 italic">Mon-Fri: 7:30 AM – 3:00 PM</p>
           </div>
 
@@ -134,7 +134,7 @@ export default function ContactPage() {
                     name="name"
                     value={form.name}
                     onChange={handleChange}
-                    placeholder="John Doe"
+                    placeholder="kugavarathan"
                     required
                     className="w-full bg-gray-50 border-none rounded-2xl p-4 focus:ring-2 focus:ring-[#0f604d] outline-none transition-all placeholder:text-gray-300"
                   />
@@ -147,7 +147,7 @@ export default function ContactPage() {
                     type="email"
                     value={form.email}
                     onChange={handleChange}
-                    placeholder="john@example.com"
+                    placeholder="user@gmail.com"
                     required
                     className="w-full bg-gray-50 border-none rounded-2xl p-4 focus:ring-2 focus:ring-[#0f604d] outline-none transition-all placeholder:text-gray-300"
                   />
@@ -193,7 +193,7 @@ export default function ContactPage() {
       <section className="bg-gray-50 py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-[#0f604d] font-bold text-sm tracking-widest uppercase">Our Campus</span>
+
             <h2 className="text-3xl md:text-5xl font-extrabold mt-3 text-gray-900">Find Us on the Map</h2>
           </div>
 
@@ -202,8 +202,9 @@ export default function ContactPage() {
             <div className="absolute -inset-2 bg-gradient-to-r from-[#0f604d] to-emerald-800 rounded-[3rem] blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
             
             <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl border-8 border-white">
+              {/* <iframe src="" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15757.245842232!2d80.2084!3d9.2275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMTMnMzkuMCJOIDgwwrAxMSczMC4yIkU!5e0!3m2!1sen!2slk!4v1700000000000!5m2!1sen!2slk"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.747065882388!2d80.25738148671878!3d9.212672219154117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afe85007674feb9%3A0x855adbfaae965898!2sThenniyankulam%20G.T.M.S!5e0!3m2!1sen!2slk!4v1769926767769!5m2!1sen!2slk"
                 className="w-full h-[500px] border-none grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
                 allowFullScreen=""
                 loading="lazy"

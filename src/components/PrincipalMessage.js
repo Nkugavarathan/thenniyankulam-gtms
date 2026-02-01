@@ -1,17 +1,24 @@
 import Image from 'next/image';
 import React from 'react';
 import { FaQuoteLeft, FaGraduationCap } from "react-icons/fa";
-
+import { motion } from 'framer-motion';
 
 export default function PrincipalMessage() {
-  return (
+  return (<motion.section
+  className="max-w-7xl mx-auto px-6 py-20 md:py-28"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+  viewport={{ once: true }}
+>
+
     <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="relative">
           
           {/* Decorative Background Element */}
-          <div className="absolute -top-12 -left-12 w-64 h-64 bg-[#0f604d]/5 rounded-full blur-3xl" />
-          <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-emerald-50 rounded-full blur-3xl" />
+          {/* <div className="absolute -top-12 -left-12 w-64 h-64 bg-[#0f604d]/5 rounded-full blur-3xl" />
+          <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-emerald-50 rounded-full blur-3xl" /> */}
 
           <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
@@ -19,12 +26,12 @@ export default function PrincipalMessage() {
             <div className="lg:col-span-5">
               <div className="relative group">
                 {/* The "Frame" */}
-                <div className="absolute inset-0 border-2 border-[#0f604d] rounded-[3rem] translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500" />
+                {/* <div className="absolute inset-0 border-2 border-[#0f604d] rounded-[3rem] translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500" /> */}
                 
                 {/* Placeholder for Principal's Photo */}
-                <div className="aspect-[4/5] bg-gray-100 rounded-[3rem] overflow-hidden border border-gray-200 shadow-2xl flex items-center justify-center">
-                   {/* Replace with <img src="/principal.jpg" /> */}
-                   <FaGraduationCap size={80} className="text-[#0f604d]/20" />
+                <div className="aspect-[4/5] bg-gray-100 rounded-[3rem] overflow-hidden border border-gray-200 flex items-center justify-center">
+                   <img src="/images/students.png" />
+                   {/* <FaGraduationCap size={80} className="text-[#0f604d]/20" /> */}
                 </div>
 
                 {/* Floating Badge */}
@@ -71,7 +78,7 @@ export default function PrincipalMessage() {
               <div className="pt-4 border-t border-gray-100 flex items-center gap-4">
                 <div className="relative w-24 h-24 shrink-0">
                      <Image
-                       src="/images/mandela.webp"   
+                       src=""   
                        alt="Nelson Mandela"
                        fill
                        className="rounded-full object-cover border-4 border-white shadow-lg"
@@ -89,5 +96,7 @@ export default function PrincipalMessage() {
         </div>
       </div>
     </section>
+    </motion.section>
+
   );
 }
