@@ -15,7 +15,8 @@ import {
 } from 'react-icons/fa';
 import { MdOutlineExplore, MdAssignment } from 'react-icons/md';
 import { HiOutlineLightBulb } from 'react-icons/hi';
-
+import { TypewriterText } from '@/components/TypeWritter';
+import Image from 'next/image';
 export default function HomePage() {
   return (
     <main className="bg-white text-gray-800">
@@ -72,13 +73,58 @@ export default function HomePage() {
               excellence in the Northern Province. We provide a nurturing environment 
               where tradition meets modern pedagogy.
             </p>
-            <div className="bg-emerald-50/50 p-8 rounded-[2.5rem] border-l-8 border-[#0f604d] relative">
+            {/* <div className="bg-emerald-50/50 p-8 rounded-[2.5rem] border-l-8 border-[#0f604d] relative">
               <FaQuoteLeft className="text-[#0f604d]/20 text-5xl absolute top-6 right-8" />
               <p className="text-xl font-medium text-gray-800 italic relative z-10">
                 "Education is the most powerful weapon which you can use to change the world."
               </p>
               <p className="mt-4 font-bold text-[#0f604d]">— Nelson Mandela</p>
-            </div>
+            </div> */}
+            {/* <div className="bg-emerald-50/50 p-8 rounded-[2.5rem] border-l-8 border-[#0f604d] relative">
+  <FaQuoteLeft className="text-[#0f604d]/20 text-5xl absolute top-6 right-8" />
+
+  <TypewriterText
+    text={`"Education is the most powerful weapon which you can use to change the world."`}
+    className="text-xl font-medium text-gray-800 italic relative z-10 min-h-[80px]"
+  />
+
+  <p className="mt-4 font-bold text-[#0f604d]">
+    — Nelson Mandela
+  </p>
+</div> */}
+
+
+<div className="bg-emerald-50/50 p-8 rounded-[2.5rem] border-l-8 border-[#0f604d] relative">
+
+  <FaQuoteLeft className="text-[#0f604d]/20 text-5xl absolute top-6 right-8" />
+
+  <div className="flex items-center gap-6">
+
+    {/* Circle Image */}
+    <div className="relative w-24 h-24 shrink-0">
+      <Image
+        src="/images/mandela.webp"   
+        alt="Nelson Mandela"
+        fill
+        className="rounded-full object-cover border-4 border-white shadow-lg"
+      />
+    </div>
+
+    {/* Quote text */}
+    <div className="flex-1">
+      <TypewriterText
+        text={`"Education is the most powerful weapon which you can use to change the world."`}
+        className="text-xl font-medium text-gray-800 italic min-h-[80px]"
+      />
+
+      <p className="mt-4 font-bold text-[#0f604d]">
+        — Nelson Mandela
+      </p>
+    </div>
+
+  </div>
+</div>
+
           </div>
           
           <div className="grid grid-cols-2 gap-4">
