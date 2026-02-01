@@ -110,7 +110,7 @@ export default function HomePage() {
 
   <FaQuoteLeft className="text-[#0f604d]/20 text-5xl absolute top-6 right-8" />
 
-  <div className="flex items-center gap-6">
+  <div className="flex flex-col md:flex-row items-center gap-6">
 
     {/* Circle Image */}
     <div className="relative w-24 h-24 shrink-0">
