@@ -60,7 +60,7 @@ export default function Footer() {
               <li><Link href="/" className="hover:text-emerald-400 transition-colors">Home</Link></li>
               <li><Link href="/about" className="hover:text-emerald-400 transition-colors">About Our School</Link></li>
               <li><Link href="/academics" className="hover:text-emerald-400 transition-colors">Academics</Link></li>
-              <li><Link href="/gallery" className="hover:text-emerald-400 transition-colors">Campus Gallery</Link></li>
+              <li><Link href="/gallery" className="hover:text-emerald-400 transition-colors"> Gallery</Link></li>
               <li><Link href="/contact" className="hover:text-emerald-400 transition-colors">Contact Us</Link></li>
             </ul>
           </div>

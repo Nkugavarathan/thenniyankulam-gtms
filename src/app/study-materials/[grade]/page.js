@@ -112,7 +112,7 @@ export default function GradePage({ params }) {
           {filteredFiles.map((file, i) => (
             <div
               key={i}
-              className="group bg-white border border-gray-100 p-6 rounded-[2rem] flex flex-col md:flex-row md:items-center justify-between hover:border-[#0f604d] hover:shadow-xl hover:shadow-[#0f604d]/5 transition-all"
+              className="group bg-white border border-gray-500 p-6 rounded-[2rem] flex flex-col md:flex-row md:items-center justify-between hover:border-[#0f604d] hover:shadow-xl hover:shadow-[#0f604d]/5 transition-all"
             >
               <div className="flex items-center gap-6">
                 <div className="w-14 h-14 bg-red-50 text-red-500 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors">

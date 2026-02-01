@@ -19,14 +19,52 @@ import { TypewriterText } from '@/components/TypeWritter';
 import { Counter } from '@/components/Counter';
 export default function AboutPage() {
   
-  const facilities = [
-    { title: "Modern Library", icon: <FaBookOpen size={24} /> },
-    { title: "Science Laboratory", icon: <FaFlask size={24} /> },
-    { title: "Computer Lab", icon: <FaLaptopCode size={24} /> },
-    { title: "Sports Facilities", icon: <MdOutlineSportsSoccer size={24} /> },
-    { title: "Spacious Classrooms", icon: <FaSchool size={24} /> },
-    { title: "Resource Center", icon: <FaUsers size={24} /> },
-  ];
+  // const facilities = [
+  //   { title: "Modern Library", icon: <FaBookOpen size={24} /> },
+  //   { title: "Science Laboratory", icon: <FaFlask size={24} /> },
+  //   { title: "Computer Lab", icon: <FaLaptopCode size={24} /> },
+  //   { title: "Sports Facilities", icon: <MdOutlineSportsSoccer size={24} /> },
+  //   { title: "Spacious Classrooms", icon: <FaSchool size={24} /> },
+  //   { title: "Resource Center", icon: <FaUsers size={24} /> },
+  // ];
+const facilities = [
+  {
+    title: "Modern Library",
+    icon: <FaBookOpen size={24} />,
+    facility:
+      "A well-stocked library with textbooks, storybooks, and reference materials to encourage reading and self-learning.",
+  },
+  {
+    title: "Science Laboratory",
+    icon: <FaFlask size={24} />,
+    facility:
+      "Fully equipped lab for Physics, Chemistry, and Biology practicals to help students learn through experiments.",
+  },
+  {
+    title: "Computer Lab",
+    icon: <FaLaptopCode size={24} />,
+    facility:
+      "Modern computers with internet access to develop digital skills, programming knowledge, and online research abilities.",
+  },
+  {
+    title: "Sports & Playground",
+    icon: <MdOutlineSportsSoccer size={24} />,
+    facility:
+      "Large playground for football, cricket, volleyball, and athletics to promote fitness and teamwork.",
+  },
+  {
+    title: "Spacious Classrooms",
+    icon: <FaSchool size={24} />,
+    facility:
+      "Clean, airy classrooms with comfortable seating and proper lighting for a better learning environment.",
+  },
+  {
+    title: "Guidance & Support Center",
+    icon: <FaUsers size={24} />,
+    facility:
+      "Dedicated teachers provide academic guidance, counseling, and personal support to help every student succeed.",
+  },
+];
 
   const achievements = [
     { title: "District Sports Champions", year: "2024", icon: <MdOutlineSportsSoccer /> },
@@ -124,7 +162,7 @@ export default function AboutPage() {
       {/* FACILITIES GRID */}
       <section className="max-w-6xl mx-auto px-6 py-20 md:py-28">
         <div className="text-center mb-16">
-          <p className="text-[#0f604d] font-bold text-sm tracking-widest uppercase mb-3">What We Offer</p>
+          {/* <p className="text-[#0f604d] font-bold text-sm tracking-widest uppercase mb-3">What We Offer</p> */}
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Facilities</h2>
           <p className="text-gray-500 text-lg">Modern infrastructure designed to support comprehensive learning</p>
         </div>
@@ -137,7 +175,8 @@ export default function AboutPage() {
               </div>
               <h4 className="font-bold text-xl text-gray-900 mb-2">{item.title}</h4>
               <p className="text-gray-600 text-sm leading-relaxed">
-                High quality environment to support student growth and learning through state-of-the-art resources.
+                {item.facility}
+                {/* High quality environment to support student growth and learning through state-of-the-art resources. */}
               </p>
             </div>
           ))}
@@ -161,7 +200,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section> */}
-
+{/* 
 <section className="bg-[#0f604d] py-16 md:py-24">
   <div className="max-w-6xl mx-auto px-6">
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -186,7 +225,7 @@ export default function AboutPage() {
       ))}
     </div>
   </div>
-</section>
+</section> */}
 
       {/* ACHIEVEMENTS */}
       <section className="max-w-4xl mx-auto px-6 py-20 md:py-28">
@@ -216,7 +255,7 @@ export default function AboutPage() {
       <section className="bg-gray-50 py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="text-[#0f604d] font-bold text-sm tracking-widest uppercase mb-3">Campus Life</p>
+            <p className="text-[#0f604d] font-bold text-sm tracking-widest uppercase mb-3">School Life</p>
             <h2 className="text-3xl md:text-4xl font-bold">Photo Gallery</h2>
           </div>
 
@@ -236,229 +275,3 @@ export default function AboutPage() {
   );
 }
 
-// // app/about/page.js
-// // FULL ABOUT PAGE
-// // Everything in ONE file (no components)
-// // Later you can split into components if needed
-
-// export default function AboutPage() {
-//   return (
-//     <main className="bg-white text-gray-800">
-
-//       {/* ================================================= */}
-//       {/* HERO SECTION (Green Background) */}
-//       {/* ================================================= */}
-//       <section className="bg-primary py-28 text-center ">
-//         <span className="bg-white/20 px-4 py-2 rounded-full text-sm">
-//           About Us
-//         </span>
-
-//         <h1 className="mt-6 text-5xl font-bold leading-tight">
-//           Shaping Futures,
-//           <br />
-//           Building Character
-//         </h1>
-
-//         <p className="mt-4 max-w-2xl mx-auto ">
-//           Discover our journey of educational excellence and commitment to
-//           nurturing the leaders of tomorrow.
-//         </p>
-//       </section>
-
-
-
-//       {/* ================================================= */}
-//       {/* OUR RICH HERITAGE */}
-//       {/* ================================================= */}
-//       <section className="max-w-6xl mx-auto px-6 py-24 text-center">
-//         <p className="text-sm text-primary font-medium mb-3">Our Story</p>
-
-//         <h2 className="text-3xl font-bold mb-8">Our Rich Heritage</h2>
-
-//         <p className="text-gray-600 leading-relaxed max-w-4xl mx-auto">
-//           Mu/Thenniyankulam Government Tamil Mixed School has been a cornerstone
-//           of education in the Thunukkai Division for many decades. Established
-//           to serve the educational needs of the local Tamil-speaking community,
-//           our school has nurtured generations to become responsible individuals
-//           who contribute meaningfully to society.
-//           <br /><br />
-//           Throughout our history, we have remained committed to providing quality
-//           education that combines academic excellence with moral and cultural
-//           values.
-//           <br /><br />
-//           Today, we continue to build on this legacy, embracing modern teaching
-//           methods while preserving traditional values that make us a trusted
-//           institution for generations of families.
-//         </p>
-//       </section>
-
-
-
-//       {/* ================================================= */}
-//       {/* VISION & MISSION */}
-//       {/* ================================================= */}
-//       <section className="bg-gray-50 py-24">
-//         <div className="max-w-6xl mx-auto px-6">
-
-//           <div className="text-center mb-14">
-//             <p className="text-sm text-primary font-medium">Our Purpose</p>
-//             <h2 className="text-3xl font-bold">Vision & Mission</h2>
-//           </div>
-
-//           <div className="grid md:grid-cols-2 gap-8">
-
-//             {/* Vision Card */}
-//             <div className="bg-white p-10 rounded-2xl shadow-md">
-//               <h3 className="text-xl font-semibold text-primary mb-4">
-//                 Our Vision
-//               </h3>
-
-//               <p className="text-gray-600 leading-relaxed">
-//                 To be a leading educational institution in the Northern Province,
-//                 nurturing academically excellent, morally strong, and socially
-//                 responsible citizens who contribute positively to society.
-//               </p>
-//             </div>
-
-//             {/* Mission Card */}
-//             <div className="bg-white p-10 rounded-2xl shadow-md">
-//               <h3 className="text-xl font-semibold text-primary mb-4">
-//                 Our Mission
-//               </h3>
-
-//               <p className="text-gray-600 leading-relaxed">
-//                 To provide comprehensive, quality education that develops
-//                 critical thinking, creativity, leadership, and strong values
-//                 while preparing students for lifelong learning and success.
-//               </p>
-//             </div>
-
-//           </div>
-//         </div>
-//       </section>
-
-
-
-//       {/* ================================================= */}
-//       {/* FACILITIES GRID */}
-//       {/* ================================================= */}
-//       <section className="max-w-6xl mx-auto px-6 py-24">
-
-//         <div className="text-center mb-14">
-//           <p className="text-sm text-primary font-medium">What We Offer</p>
-//           <h2 className="text-3xl font-bold">Our Facilities</h2>
-//           <p className="text-gray-500 mt-2">
-//             Modern infrastructure designed to support comprehensive learning
-//           </p>
-//         </div>
-
-//         <div className="grid md:grid-cols-3 gap-6">
-
-//           {[
-//             "Modern Library",
-//             "Science Laboratory",
-//             "Computer Lab",
-//             "Sports Facilities",
-//             "Spacious Classrooms",
-//             "Resource Center",
-//           ].map((title, i) => (
-//             <div
-//               key={i}
-//               className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
-//             >
-//               <h4 className="font-semibold text-primary">{title}</h4>
-//               <p className="text-gray-600 text-sm mt-2">
-//                 High quality environment to support student growth and learning.
-//               </p>
-//             </div>
-//           ))}
-
-//         </div>
-//       </section>
-
-
-
-//       {/* ================================================= */}
-//       {/* DEDICATED EDUCATORS (Green Background Section) */}
-//       {/* ================================================= */}
-//       <section className="bg-primary py-24 text-white">
-//         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center px-6">
-
-//           <div className="bg-white text-gray-800 rounded-xl p-8 shadow">
-//             <h3 className="text-4xl font-bold text-primary">45+</h3>
-//             <p className="mt-2">Dedicated Faculty</p>
-//           </div>
-
-//           <div className="bg-white text-gray-800 rounded-xl p-8 shadow">
-//             <h3 className="text-4xl font-bold text-primary">15+</h3>
-//             <p className="mt-2">Subject Specialists</p>
-//           </div>
-
-//           <div className="bg-white text-gray-800 rounded-xl p-8 shadow">
-//             <h3 className="text-4xl font-bold text-primary">20+</h3>
-//             <p className="mt-2">Support Staff</p>
-//           </div>
-
-//         </div>
-//       </section>
-
-
-
-//       {/* ================================================= */}
-//       {/* ACHIEVEMENTS */}
-//       {/* ================================================= */}
-//       <section className="max-w-6xl mx-auto px-6 py-24">
-
-//         <div className="text-center mb-12">
-//           <p className="text-sm text-primary font-medium">Pride of Our School</p>
-//           <h2 className="text-3xl font-bold">Achievements & Recognition</h2>
-//         </div>
-
-//         <div className="space-y-4">
-
-//           {[
-//             "District Sports Champions",
-//             "Academic Excellence Award",
-//             "Cultural Performance Award",
-//             "Environmental Initiative",
-//           ].map((item, i) => (
-//             <div
-//               key={i}
-//               className="bg-white rounded-xl shadow p-6 flex items-center justify-between"
-//             >
-//               <span className="text-primary font-semibold">2024</span>
-//               <span className="text-gray-700">{item}</span>
-//             </div>
-//           ))}
-
-//         </div>
-//       </section>
-
-
-
-//       {/* ================================================= */}
-//       {/* PHOTO GALLERY */}
-//       {/* ================================================= */}
-//       <section className="max-w-6xl mx-auto px-6 py-24">
-
-//         <div className="text-center mb-12">
-//           <p className="text-sm text-primary font-medium">Campus Life</p>
-//           <h2 className="text-3xl font-bold">Photo Gallery</h2>
-//         </div>
-
-//         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-//           {Array.from({ length: 8 }).map((_, i) => (
-//             <div
-//               key={i}
-//               className="h-40 bg-gray-100 rounded-xl flex items-center justify-center text-gray-400"
-//             >
-//               Gallery Image
-//             </div>
-//           ))}
-//         </div>
-
-//       </section>
-
-//     </main>
-//   );
-// }

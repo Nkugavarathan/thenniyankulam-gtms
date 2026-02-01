@@ -17,6 +17,8 @@ import { MdOutlineExplore, MdAssignment } from 'react-icons/md';
 import { HiOutlineLightBulb } from 'react-icons/hi';
 import { TypewriterText } from '@/components/TypeWritter';
 import Image from 'next/image';
+import { Counter } from '@/components/Counter';
+import PrincipalMessage from '@/components/PrincipalMessage';
 export default function HomePage() {
   return (
     <main className="bg-white text-gray-800">
@@ -149,7 +151,7 @@ export default function HomePage() {
       </section>
 
       {/* --- STATS SECTION: AT A GLANCE --- */}
-      <section className="bg-[#0f604d] py-24 relative overflow-hidden">
+      {/* <section className="bg-[#0f604d] py-24 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <span className="text-emerald-400 font-bold tracking-[0.3em] uppercase text-sm">Our Impact</span>
@@ -173,7 +175,71 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+<section className="bg-[#0f604d] py-24 relative overflow-hidden">
+  <div className="max-w-7xl mx-auto px-6 relative z-10">
+
+    <div className="text-center mb-16">
+      <span className="text-emerald-400 font-bold tracking-[0.3em] uppercase text-sm">
+        Our Impact
+      </span>
+      <h2 className="text-4xl md:text-5xl font-extrabold text-white mt-4">
+        School at a Glance
+      </h2>
+    </div>
+
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      {[
+        {
+          icon: <FaChalkboardTeacher size={32} />,
+          value: 45,
+          suffix: "+",
+          label: " Teachers",
+        },
+        {
+          icon: <FaChild size={32} />,
+          value: 800,
+          suffix: "+",
+          label: "Students",
+        },
+        {
+          icon: <HiOutlineLightBulb size={32} />,
+          value: 11,
+          suffix: "",
+          label: "Grades Covered",
+        },
+        {
+          icon: <MdOutlineExplore size={32} />,
+          value: 20,
+          suffix: "+",
+          label: "Years of Service",
+        },
+      ].map((stat, i) => (
+        <div
+          key={i}
+          className="bg-white/10 backdrop-blur-xl p-10 rounded-[2rem] border border-white/10 text-center group hover:bg-white hover:scale-105 transition-all duration-500"
+        >
+          {/* Icon */}
+          <div className="text-emerald-400 group-hover:text-[#0f604d] mb-6 flex justify-center transition-colors">
+            {stat.icon}
+          </div>
+
+          {/* 🔥 Animated Counter */}
+          <h3 className="text-5xl font-black text-white group-hover:text-[#0f604d] mb-2 transition-colors">
+            <Counter value={stat.value} suffix={stat.suffix} duration={2} />
+          </h3>
+
+          <p className="text-emerald-100/60 group-hover:text-gray-500 font-bold uppercase tracking-widest text-xs transition-colors">
+            {stat.label}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<PrincipalMessage/>
 
       {/* --- ANNOUNCEMENTS: LATEST NEWS --- */}
       <section className="py-24 bg-gray-50">
